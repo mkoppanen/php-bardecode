@@ -18,7 +18,7 @@ Installing on Linux system
   
      cd /opt/php-bardecode
      phpize
-     ./configure --with-phpbardecode=/opt/bardecoder_7_2_1/glibc_2_4
+     ./configure --with-bardecode=/opt/bardecoder_7_2_1/glibc_2_4
      make 
      make install
 
