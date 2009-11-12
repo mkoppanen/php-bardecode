@@ -1,0 +1,37 @@
+Installing on Linux system
+
+1. Download the bardecode library from 
+ http://www.softeksoftware.co.uk/en/products/60-barcode-reader-toolkit-for-linux.html
+
+2. Install libtiff and libjpeg. This step depends on your distro but for example
+   debian you can do the following:
+
+    apt-get install libtiff4 libjpeg62
+
+3. Unpack the barcode library to for example under /opt. This should create
+   directory similar to /opt/bardecoder_7_2_1 with the the contents of the 
+   package inside it.
+
+4. Copy the php-bardecode sources to /opt/php-bardecode and run the following
+   commands. Choose the correct directory based on the system, either glibc_2_4
+   or glibc_2_0.
+  
+     cd /opt/php-bardecode
+     phpize
+     ./configure --with-phpbardecode=/opt/bardecoder_7_2_1/glibc_2_4
+     make 
+     make install
+
+5. Add php-bardecode to php.ini:
+     extension=bardecode.so
+
+
+How to read barcodes
+
+  The following PHP code reads a barcode from a file:
+
+<?php
+$bardecode = new bardecode();
+$bardecode->setParameter(bardecode::READ_EAN13, true);
+var_dump($bardecode->read("ean13.jpg"));
+?>
