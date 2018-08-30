@@ -9,7 +9,7 @@ Installing on Linux system
     apt-get install libtiff4 libjpeg62
 
 3. Unpack the barcode library to for example under /opt. This should create
-   directory similar to /opt/bardecoder_7_2_1 with the the contents of the 
+   directory similar to /opt/bardecoder_7_2_1 with the contents of the 
    package inside it.
 
 4. Copy the php-bardecode sources to /opt/php-bardecode and run the following
